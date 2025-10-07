@@ -1,3 +1,5 @@
+package models
+
 /**
  * Data class representing the real-time status of the currently authenticated user.
  * This data is displayed on the HomeFragment (Milestones 1 & 4).
