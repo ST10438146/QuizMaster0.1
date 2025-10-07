@@ -1,23 +1,36 @@
 package student.projects.quizmaster01
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.home_fragment_container) as NavHostFragment
-        val navController = navHostFragment.navController
-        val bottomNavView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
 
-        bottomNavView.setupWithNavController(navController)
+        // Load default fragment
+        loadFragment(PlayFragment())
 
+        // Handle navigation item clicks
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_play -> loadFragment(PlayFragment())
+                R.id.nav_quests -> loadFragment(QuestsFragment())
+                R.id.nav_leaderboard -> loadFragment(LeaderboardFragment())
+                R.id.nav_profile -> loadFragment(ProfileFragment())
+            }
+            true
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.home_fragment_container, fragment)
+            .commit()
     }
 }
