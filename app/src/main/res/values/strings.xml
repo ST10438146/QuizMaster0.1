@@ -9,4 +9,5 @@
         <item>Technology</item>
         <item>Culture (South Africa)</item>
     </string-array>
+    <string name="default_web_client_id">YOUR-WEB-CLIENT-ID.apps.googleusercontent.com</string>
 </resources>
