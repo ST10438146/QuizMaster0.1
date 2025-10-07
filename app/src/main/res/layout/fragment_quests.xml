@@ -9,53 +9,25 @@
     tools:context=".QuestsFragment">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvQuestsHeader"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Season And Quests"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
-
-    <ProgressBar
-        android:id="@+id/seasonProgressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progress="40"
-        android:max="100"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Daily Quests"
-        android:textSize="20sp"
+        android:text="Active Quests"
+        android:textSize="22sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dailyQuestsRecyclerView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp"
-        android:background="#F5F5F5"
-        android:padding="8dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Weekly Quests"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/weeklyQuestsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp"
-        android:background="#F5F5F5"
-        android:padding="8dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvQuests"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_quest"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>
