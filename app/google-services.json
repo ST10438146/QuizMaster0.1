@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "977558745292",
+    "project_id": "quiz-game-29070",
+    "storage_bucket": "quiz-game-29070.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:dcbf85ac952d79cc691269",
+        "android_client_info": {
+          "package_name": "student.projects.quizmaster0"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:c26046bd189b8f14691269",
+        "android_client_info": {
+          "package_name": "student.projects.quizmaster01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:f34bfdfd2a28e701691269",
+        "android_client_info": {
+          "package_name": "student.projects.quizmaster20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:b497e16c934bbbbf691269",
+        "android_client_info": {
+          "package_name": "vcmsa.projects.quizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:776dea3c7aa5bd40691269",
+        "android_client_info": {
+          "package_name": "vcmsa.projects.quizgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977558745292:android:3d79ed158af61727691269",
+        "android_client_info": {
+          "package_name": "vcmsa.projects.quizmaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLvOa2m4706Zz1fSrnOLdtzsoBmPYsGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

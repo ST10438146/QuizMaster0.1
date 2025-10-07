@@ -1,0 +1,19 @@
+<!-- res/navigation/nav_auth.xml -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_auth"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="student.projects.quizmaster01.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/activity_login" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="student.projects.quizmaster01.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/activity_register" />
+</navigation>
