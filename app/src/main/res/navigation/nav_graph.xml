@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- 🏠 Home / Dashboard -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="student.projects.quizmaster01.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_playFragment"
+            app:destination="@id/playFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_questsFragment"
+            app:destination="@id/questsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_leaderboardFragment"
+            app:destination="@id/leaderboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- 🎮 Play Fragment -->
+    <fragment
+        android:id="@+id/playFragment"
+        android:name="student.projects.quizmaster01.PlayFragment"
+        android:label="Play"
+        tools:layout="@layout/fragment_play">
+
+        <action
+            android:id="@+id/action_playFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- 🧠 Game Fragment -->
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="student.projects.quizmaster01.GameFragment"
+        android:label="Game"
+        tools:layout="@layout/fragment_game">
+
+        <!-- ✅ Argument needed for SafeArgs -->
+        <argument
+            android:name="selectedCategory"
+            app:argType="string"
+            android:defaultValue="General Knowledge" />
+    </fragment>
+
+    <!-- 🧩 Quests Fragment -->
+    <fragment
+        android:id="@+id/questsFragment"
+        android:name="student.projects.quizmaster01.QuestsFragment"
+        android:label="Quests"
+        tools:layout="@layout/fragment_quests" />
+
+    <!-- 🏆 Leaderboard Fragment -->
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="student.projects.quizmaster01.LeaderboardFragment"
+        android:label="Leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
+
+    <!-- 👤 Profile Fragment -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="student.projects.quizmaster01.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <!-- 🔐 Login Screen -->
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="student.projects.quizmaster01.LoginActivity"
+        android:label="Login" />
+
+    <!-- 📝 Register Screen -->
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="student.projects.quizmaster01.RegisterActivity"
+        android:label="Register" />
+
+</navigation>
