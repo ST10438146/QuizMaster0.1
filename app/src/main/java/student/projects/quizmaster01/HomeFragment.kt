@@ -13,6 +13,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Load data
         viewModel.loadUserStatus()
         viewModel.userStatus.observe(viewLifecycleOwner) { status ->
             view.findViewById<TextView>(R.id.tvPlayerName)?.text = status.playerName
@@ -21,17 +22,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             view.findViewById<TextView>(R.id.tvActiveQuests)?.text = "${status.activeQuestsCount} Active Quests"
         }
 
+        // ✅ Navigate to Category Select
         view.findViewById<View>(R.id.btn_start_solo)?.setOnClickListener {
-            viewModel.onStartSoloGameClicked()
-            // TODO: replace with a real destination when CategorySelectFragment exists
-            // findNavController().navigate(R.id.categorySelectFragment)
+            findNavController().navigate(R.id.categorySelectFragment)
         }
 
+        // ✅ Navigate to Matchmaking
         view.findViewById<View>(R.id.btn_start_multiplayer)?.setOnClickListener {
-            viewModel.onStartMultiplayerClicked()
-            // TODO: create matchmakingFragment before navigating
+            findNavController().navigate(R.id.matchmakingFragment)
         }
 
+        // ✅ Already correct — goes to Quests tab
         view.findViewById<View>(R.id.season_pass_card)?.setOnClickListener {
             findNavController().navigate(R.id.nav_quests)
         }

@@ -28,4 +28,15 @@
         android:name="student.projects.quizmaster01.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/categorySelectFragment"
+        android:name="student.projects.quizmaster01.CategorySelectFragment"
+        android:label="Category Select"
+        tools:layout="@layout/fragment_category_select" />
+
+    <fragment
+        android:id="@+id/matchmakingFragment"
+        android:name="student.projects.quizmaster01.MatchmakingFragment"
+        android:label="Matchmaking"
+        tools:layout="@layout/fragment_matchmaking" />
 </navigation>
