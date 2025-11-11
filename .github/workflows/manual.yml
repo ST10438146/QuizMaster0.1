@@ -1,0 +1,68 @@
+name: Android CI - QuizMaster
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    # Optional: Run multiple Gradle versions if needed
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version: [17]
+
+    steps:
+    
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: ${{ matrix.java-version }}
+
+    # Cache Gradle dependencies for faster builds
+    - name: Cache Gradle packages
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
+    # Grant execute permission for Gradle
+    - name: Make Gradle executable
+      run: chmod +x gradlew
+
+    # Build the project (assemble debug APK)
+    - name: Build with Gradle
+      run: ./gradlew clean assembleDebug --stacktrace
+
+    # Run unit tests
+    - name: Run Unit Tests
+      run: ./gradlew testDebugUnitTest --stacktrace
+
+    # Upload debug APK as a build artifact
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: QuizMaster-Debug-APK
+        path: app/build/outputs/apk/debug/app-debug.apk
+
+    # Lint and static analysis
+    - name: Run Lint
+      run: ./gradlew lint
+
+    # 9️⃣ (Optional) UI Tests (if you have them)
+    # - name: Run Instrumentation Tests
+    #   run: ./gradlew connectedAndroidTest
