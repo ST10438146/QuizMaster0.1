@@ -23,14 +23,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         // ✅ Navigate to Category Select
-        view.findViewById<View>(R.id.btn_start_solo)?.setOnClickListener {
-            findNavController().navigate(R.id.categorySelectFragment)
-        }
+        //view.findViewById<View>(R.id.btn_start_solo)?.setOnClickListener {
+          //  findNavController().navigate(R.id.categorySelectFragment)
+        //}
 
         // ✅ Navigate to Matchmaking
-        view.findViewById<View>(R.id.btn_start_multiplayer)?.setOnClickListener {
-            findNavController().navigate(R.id.matchmakingFragment)
-        }
+        //view.findViewById<View>(R.id.btn_start_multiplayer)?.setOnClickListener {
+          //  findNavController().navigate(R.id.matchmakingFragment)
+        //}
 
         // ✅ Already correct — goes to Quests tab
         view.findViewById<View>(R.id.season_pass_card)?.setOnClickListener {

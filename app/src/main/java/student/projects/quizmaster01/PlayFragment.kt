@@ -1,18 +1,15 @@
 package student.projects.quizmaster01
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import student.projects.quizmaster01.HomeViewModel
-import student.projects.quizmaster01.R
 
 class PlayFragment : Fragment() {
 
@@ -51,25 +48,24 @@ class PlayFragment : Fragment() {
         btnCreateMatch = view.findViewById(R.id.btnCreateMatch)
         btnNotifications = view.findViewById(R.id.btnNotifications)
 
-        // Load categories and user data
         setupCategorySpinner()
         observeUserStatus()
-
-        // Button actions
         setupListeners()
 
         return view
     }
 
     private fun setupCategorySpinner() {
-        // Example categories - replace with dynamic Firestore load later if needed
         categories.clear()
         categories.addAll(
             listOf("General Knowledge", "Science", "History", "Sports", "Entertainment")
         )
 
-        val adapter = ArrayAdapter(requireContext(),
-            android.R.layout.simple_spinner_dropdown_item, categories)
+        val adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            categories
+        )
         spinnerCategory.adapter = adapter
     }
 
@@ -83,26 +79,30 @@ class PlayFragment : Fragment() {
     }
 
     private fun setupListeners() {
-
         btnStartSolo.setOnClickListener {
             val selectedCategory = spinnerCategory.selectedItem?.toString() ?: "General Knowledge"
+
             Toast.makeText(
                 requireContext(),
                 "Starting Solo Game in $selectedCategory!",
                 Toast.LENGTH_SHORT
             ).show()
 
+            // ✅ Manual bundle passing (works even if SafeArgs not active)
+            val bundle = Bundle().apply {
+                putString("category", selectedCategory)
+            }
 
+            // Navigate to GameFragment
+            findNavController().navigate(R.id.gameFragment, bundle)
         }
 
         btnJoinMatch.setOnClickListener {
             Toast.makeText(requireContext(), "Joining a random match...", Toast.LENGTH_SHORT).show()
-            // Later: Implement matchmaking logic
         }
 
         btnCreateMatch.setOnClickListener {
             Toast.makeText(requireContext(), "Creating a private room...", Toast.LENGTH_SHORT).show()
-            // Later: Create a lobby and share code
         }
 
         btnNotifications.setOnClickListener {

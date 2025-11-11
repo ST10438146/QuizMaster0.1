@@ -1,20 +1,25 @@
+<!-- res/menu/menu_bottom_nav.xml -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- 🟩 Play / Main Game Menu -->
     <item
-        android:id="@+id/nav_play"
+        android:id="@+id/playFragment"
         android:icon="@drawable/ic_play_game"
         android:title="Play" />
 
+    <!-- 🟦 Quests -->
     <item
         android:id="@+id/nav_quests"
         android:icon="@drawable/ic_quests"
         android:title="Quests" />
 
+    <!-- 🥇 Leaderboard -->
     <item
         android:id="@+id/nav_leaderboard"
         android:icon="@drawable/ic_leaderboard"
         android:title="Leaderboard" />
 
+    <!-- 👤 Profile -->
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile"

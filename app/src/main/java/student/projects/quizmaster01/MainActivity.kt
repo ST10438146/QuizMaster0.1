@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         // Handle navigation item clicks
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_play -> loadFragment(PlayFragment())
+                R.id.playFragment -> loadFragment(PlayFragment())
                 R.id.nav_quests -> loadFragment(QuestsFragment())
                 R.id.nav_leaderboard -> loadFragment(LeaderboardFragment())
                 R.id.nav_profile -> loadFragment(ProfileFragment())

@@ -3,14 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/nav_play">
+    app:startDestination="@id/playFragment">
 
+    <!-- Play Fragment -->
     <fragment
-        android:id="@+id/nav_play"
-        android:name="student.projects.quizmaster01.HomeFragment"
+        android:id="@+id/playFragment"
+        android:name="student.projects.quizmaster01.PlayFragment"
         android:label="Play"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_play">
+        <action
+            android:id="@+id/action_playFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 
+    <!-- Game Fragment -->
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="student.projects.quizmaster01.GameFragment"
+        android:label="Game"
+        tools:layout="@layout/fragment_game">
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+    </fragment>
+
+    <!-- 🆕 Game Over Fragment -->
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="student.projects.quizmaster01.GameOverFragment"
+        android:label="Game Over"
+        tools:layout="@layout/fragment_game_over" />
+
+    <!-- Other fragments (Quests, Leaderboard, Profile, etc.) -->
     <fragment
         android:id="@+id/nav_quests"
         android:name="student.projects.quizmaster01.QuestsFragment"
@@ -28,15 +52,5 @@
         android:name="student.projects.quizmaster01.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/categorySelectFragment"
-        android:name="student.projects.quizmaster01.CategorySelectFragment"
-        android:label="Category Select"
-        tools:layout="@layout/fragment_category_select" />
 
-    <fragment
-        android:id="@+id/matchmakingFragment"
-        android:name="student.projects.quizmaster01.MatchmakingFragment"
-        android:label="Matchmaking"
-        tools:layout="@layout/fragment_matchmaking" />
 </navigation>
