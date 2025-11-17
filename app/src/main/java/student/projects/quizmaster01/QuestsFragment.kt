@@ -13,15 +13,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import student.projects.quizmaster01.R
 
-data class Quest(
-    val id: String = "",
-    val title: String = "",
-    val description: String = "",
-    val progress: Int = 0,
-    val rewardXP: Int = 0,
-    val isCompleted: Boolean = false
-)
-
 class QuestsFragment : Fragment() {
 
     private lateinit var firestore: FirebaseFirestore
@@ -71,7 +62,10 @@ class QuestsFragment : Fragment() {
                             description = it.getString("description") ?: "",
                             progress = (it.getLong("progress") ?: 0).toInt(),
                             rewardXP = (it.getLong("rewardXP") ?: 0).toInt(),
-                            isCompleted = it.getBoolean("isCompleted") ?: false
+                            isCompleted = it.getBoolean("isCompleted") ?: false,
+                            type = it.getString("type") ?: "daily",
+                            goal = (it.getLong("goal") ?: 0).toInt(),
+                            current = (it.getLong("current") ?: 0).toInt()
                         )
                     })
                     adapter.notifyDataSetChanged()
