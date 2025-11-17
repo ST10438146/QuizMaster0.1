@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">QuizMaster0.1</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string-array name="default_categories">
+        <string-array name="default_categories">
         <item>General Knowledge</item>
         <item>History</item>
         <item>Science</item>
@@ -10,4 +9,25 @@
         <item>Culture (South Africa)</item>
     </string-array>
     <string name="default_web_client_id">YOUR-WEB-CLIENT-ID.apps.googleusercontent.com</string>
+    <!-- Bottom Navigation -->
+    <string name="play">Play</string>
+    <string name="quests">Quests</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+
+    <!-- Settings Fragment -->
+    <string name="select_language">Select Language</string>
+    <string name="user_profile">User Profile</string>
+    <string name="stats_and_achievements">Stats and Achievements</string>
+    <string name="enable_biometric_login">Enable Biometric Login</string>
+    <string name="receive_notifications">Receive Notifications</string>
+    <string name="logout">Logout</string>
+
+    <!-- Game Over -->
+    <string name="your_score">Your Score:</string>
+    <string name="category_label">Category:</string>
+    <string name="xp_earned">XP earned:</string>
+    <string name="retry">Retry</string>
+    <string name="back_home">Back Home</string>
 </resources>

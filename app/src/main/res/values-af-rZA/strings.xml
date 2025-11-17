@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Bottom Navigation -->
+    <string name="play">Speel</string>
+    <string name="quests">Take</string>
+    <string name="leaderboard">Leiertabel</string>
+    <string name="profile">Profiel</string>
+    <string name="settings">Instellings</string>
+
+    <!-- Settings -->
+    <string name="select_language">Kies Taal</string>
+    <string name="user_profile">Gebruikersprofiel</string>
+    <string name="stats_and_achievements">Statistieke en Prestasies</string>
+    <string name="enable_biometric_login">Aktiveer Biometriese Aanmelding</string>
+    <string name="receive_notifications">Ontvang Kennisgewings</string>
+    <string name="logout">Teken Uit</string>
+
+    <!-- Game Over -->
+    <string name="your_score">Jou Punte:</string>
+    <string name="category_label">Kategorie:</string>
+    <string name="xp_earned">XP Verdien:</string>
+    <string name="retry">Probeer Weer</string>
+    <string name="back_home">Terug Huis Toe</string>
+</resources>
