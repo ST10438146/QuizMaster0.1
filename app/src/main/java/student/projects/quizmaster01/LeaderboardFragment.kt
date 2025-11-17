@@ -10,11 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.FirebaseFirestore
 import student.projects.quizmaster01.R
 
-data class PlayerRank(
-    val name: String = "",
-    val xp: Int = 0
-)
-
 class LeaderboardFragment : Fragment() {
 
     private lateinit var firestore: FirebaseFirestore
@@ -40,22 +35,50 @@ class LeaderboardFragment : Fragment() {
     }
 
     private fun loadLeaderboard() {
+
+        val mode = "xp"   // change to "dailyXp" or "weeklyXp" later when adding spinner
+
         firestore.collection("users")
-            .orderBy("xp", com.google.firebase.firestore.Query.Direction.DESCENDING)
+            .orderBy(mode, com.google.firebase.firestore.Query.Direction.DESCENDING)
             .limit(20)
             .get()
             .addOnSuccessListener { snapshot ->
                 players.clear()
-                players.addAll(snapshot.documents.mapIndexed { index, doc ->
+
+                val list = snapshot.documents.mapIndexed { index, doc ->
+                    val xpValue = doc.get("xp")
+                    val xpInt = when (xpValue) {
+                        is Long -> xpValue.toInt()
+                        is Int -> xpValue
+                        else -> 0
+                    }
+
+                    val rank = index + 1
+                    val medal = when (rank) {
+                        1 -> "gold"
+                        2 -> "silver"
+                        3 -> "bronze"
+                        else -> ""
+
+                    }
+
                     PlayerRank(
-                        name = doc.getString("username") ?: "Player ${index + 1}",
-                        xp = (doc.getLong("xp") ?: 0).toInt()
+                        name = doc.getString("username") ?: "Player $rank",
+                        xp = (doc.getLong("xp") ?: 0).toInt(),
+                        dailyXp = (doc.getLong("dailyXp") ?: 0).toInt(),
+                        weeklyXp = (doc.getLong("weeklyXp") ?: 0).toInt(),
+                        medals = medal,
+                        rank = rank
                     )
-                })
+                }
+
+                players.addAll(list)
                 adapter.notifyDataSetChanged()
             }
             .addOnFailureListener {
-                Toast.makeText(requireContext(), "Failed to load leaderboard", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to load leaderboard", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
+
 }

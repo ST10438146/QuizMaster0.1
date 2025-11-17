@@ -98,6 +98,7 @@ class GameFragment : Fragment(), TextToSpeech.OnInitListener {
                 if (currentIndex < questions.size - 1) {
                     currentIndex++
                     displayQuestion()
+
                 } else {
                     endGame()
                 }
@@ -281,7 +282,7 @@ class GameFragment : Fragment(), TextToSpeech.OnInitListener {
             val button = optionButtons[i]
             val text = q.options.getOrNull(i) ?: ""
             button.text = text
-            button.setBackgroundColor(Color.parseColor("#EEEEEE"))
+            button.setBackgroundResource(R.drawable.option_button_bg)
             button.isEnabled = true
 
             button.setOnClickListener {
@@ -330,8 +331,14 @@ class GameFragment : Fragment(), TextToSpeech.OnInitListener {
         Log.d(TAG, "endGame - score=$score")
         val categoryPlayed = arguments?.getString("category") ?: "General Knowledge"
         val xpEarned = score
+        val badgesEarned = mutableListOf<String>()
 
+        if (score >= 40) badgesEarned.add("Pro Player")
+        else if (score >= 20) badgesEarned.add("Sharp Thinker")
+
+        badgesEarned.add("Quiz Finisher")
         updateXP(xpEarned)
+        saveUserProgressToFirestore(xpEarned, listOf("Completed Quiz"))  // add a badge
 
         val bundle = Bundle().apply {
             putInt("score", score)
@@ -368,6 +375,29 @@ class GameFragment : Fragment(), TextToSpeech.OnInitListener {
             }
         } catch (ex: Exception) {
             Log.e(TAG, "Exception while updating XP", ex)
+        }
+    }
+    private fun saveUserProgressToFirestore(xpEarned: Int, badgesEarned: List<String>) {
+        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        val userRef = firestore.collection("users").document(userId)
+
+        firestore.runTransaction { transaction ->
+            val snapshot = transaction.get(userRef)
+
+            val currentXp = snapshot.getLong("xp") ?: 0L
+            val updatedXp = currentXp + xpEarned
+
+            val currentBadges = snapshot.get("badges") as? MutableList<String> ?: mutableListOf()
+            val updatedBadges = (currentBadges + badgesEarned).distinct()
+
+            transaction.update(userRef, mapOf(
+                "xp" to updatedXp,
+                "badges" to updatedBadges
+            ))
+        }.addOnSuccessListener {
+            Log.d(TAG, "XP & badges updated successfully")
+        }.addOnFailureListener { ex ->
+            Log.e(TAG, "Failed to update user progress", ex)
         }
     }
 
