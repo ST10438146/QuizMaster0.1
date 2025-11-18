@@ -13,7 +13,7 @@
             android:id="@+id/tvProgress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Question 1/5"
+            android:text="@string/question_progress"
             android:textSize="14sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
@@ -22,7 +22,7 @@
             android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Loading question..."
+            android:text="@string/loading_question"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
@@ -31,7 +31,7 @@
             android:id="@+id/btnOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 1"
+            android:text="@string/option_default"
             android:background="@drawable/option_button_bg"
             android:layout_marginVertical="4dp"/>
 
@@ -39,7 +39,7 @@
             android:id="@+id/btnOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 2"
+            android:text="@string/option_default"
             android:background="@drawable/option_button_bg"
             android:layout_marginVertical="4dp"/>
 
@@ -47,7 +47,7 @@
             android:id="@+id/btnOption3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 3"
+            android:text="@string/option_default"
             android:background="@drawable/option_button_bg"
             android:layout_marginVertical="4dp"/>
 
@@ -55,7 +55,7 @@
             android:id="@+id/btnOption4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 4"
+            android:text="@string/option_default"
             android:background="@drawable/option_button_bg"
             android:layout_marginVertical="4dp"/>
 
@@ -63,7 +63,7 @@
             android:id="@+id/btnNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next Question"
+            android:text="@string/next_question"
             android:visibility="gone"
             android:layout_marginTop="16dp"/>
 
@@ -71,7 +71,7 @@
             android:id="@+id/tvScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Score: 0"
+            android:text="@string/score_display"
             android:textSize="16sp"
             android:layout_marginTop="12dp"/>
     </LinearLayout>

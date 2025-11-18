@@ -71,42 +71,40 @@ class PlayFragment : Fragment() {
 
     private fun observeUserStatus() {
         viewModel.userStatus.observe(viewLifecycleOwner) { status ->
-            tvUserName.text = "Welcome, ${status.playerName}"
+            tvUserName.text = getString(R.string.welcome_user, status.playerName)
             val progress = (status.xp % 100)
             xpProgressBar.progress = progress
-            tvXPValue.text = "XP: ${status.xp}/100 to next level"
+            tvXPValue.text = getString(R.string.xp_progress, status.xp)
         }
     }
 
     private fun setupListeners() {
         btnStartSolo.setOnClickListener {
-            val selectedCategory = spinnerCategory.selectedItem?.toString() ?: "General Knowledge"
+            val selectedCategory = spinnerCategory.selectedItem?.toString() ?: getString(R.string.category_general)
 
             Toast.makeText(
                 requireContext(),
-                "Starting Solo Game in $selectedCategory!",
+                getString(R.string.starting_solo, selectedCategory),
                 Toast.LENGTH_SHORT
             ).show()
 
-            // ✅ Manual bundle passing (works even if SafeArgs not active)
-            val bundle = Bundle().apply {
-                putString("category", selectedCategory)
-            }
-
-            // Navigate to GameFragment
+            val bundle = Bundle().apply { putString("category", selectedCategory) }
             findNavController().navigate(R.id.gameFragment, bundle)
         }
 
         btnJoinMatch.setOnClickListener {
-            Toast.makeText(requireContext(), "Joining a random match...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.joining_match), Toast.LENGTH_SHORT).show()
         }
 
         btnCreateMatch.setOnClickListener {
-            Toast.makeText(requireContext(), "Creating a private room...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.creating_room), Toast.LENGTH_SHORT).show()
         }
 
         btnNotifications.setOnClickListener {
-            Toast.makeText(requireContext(), "No new notifications!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), getString(R.string.no_notifications), Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
 }

@@ -37,7 +37,7 @@
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Welcome, ST10438146"
+                android:text="@string/welcome_user_placeholder"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
 
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Your Challenge"
+                android:text="@string/select_challenge"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"/>
@@ -105,14 +105,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Solo Challenge"
+                        android:text="@string/solo_challenge"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Play against the clock to beat your high score."
+                        android:text="@string/solo_description"
                         android:layout_marginBottom="16dp"/>
 
                     <Spinner
@@ -126,7 +126,7 @@
                         android:id="@+id/btnStartSolo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Start Game"/>
+                        android:text="@string/start_game"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -147,14 +147,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Multiplayer Match"
+                        android:text="@string/multiplayer_match"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Challenge friends or random opponents in real-time."
+                        android:text="@string/multiplayer_description"
                         android:layout_marginBottom="16dp"/>
 
                     <Button
@@ -162,14 +162,14 @@
                         style="@style/Widget.Material3.Button.OutlinedButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Join Random Match"/>
+                        android:text="@string/join_random"/>
 
                     <Button
                         android:id="@+id/btnCreateMatch"
                         style="@style/Widget.Material3.Button.TextButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Create Private Room"/>
+                        android:text="@string/create_room"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

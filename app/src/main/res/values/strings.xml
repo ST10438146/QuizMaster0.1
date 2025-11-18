@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuizMaster0.1</string>
+    <string name="app_name" translatable="false">QuizMaster0.1</string>
     <!-- TODO: Remove or change this placeholder text -->
         <string-array name="default_categories">
         <item>General Knowledge</item>
@@ -14,20 +14,67 @@
     <string name="quests">Quests</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="profile">Profile</string>
-    <string name="settings">Settings</string>
 
-    <!-- Settings Fragment -->
-    <string name="select_language">Select Language</string>
-    <string name="user_profile">User Profile</string>
-    <string name="stats_and_achievements">Stats and Achievements</string>
-    <string name="enable_biometric_login">Enable Biometric Login</string>
-    <string name="receive_notifications">Receive Notifications</string>
-    <string name="logout">Logout</string>
+    <!-- Game Screen -->
+    <string name="question_progress">Question %1$d/%2$d</string>
+    <string name="loading_question">Loading question…</string>
+    <string name="option_default">Option</string>
+    <string name="next_question">Next Question</string>
+    <string name="score_display">Score: %1$d</string>
 
     <!-- Game Over -->
-    <string name="your_score">Your Score:</string>
-    <string name="category_label">Category:</string>
-    <string name="xp_earned">XP earned:</string>
+    <string name="your_score">Your Score: %1$d</string>
+    <string name="xp_earned">+%1$d XP earned!</string>
+    <string name="category_played">Category: %1$s</string>
     <string name="retry">Retry</string>
-    <string name="back_home">Back Home</string>
+    <string name="back_to_play">Back to Play</string>
+
+    <!-- Leaderboard -->
+    <string name="leaderboard_title">Leaderboard</string>
+
+    <!-- Quests -->
+    <string name="active_quests">Active Quests</string>
+
+    <!-- Profile -->
+    <string name="user_profile">User Profile</string>
+    <string name="stats_and_achievements">Stats and Achievements</string>
+    <string name="xp_and_level">XP: %1$d (Level %2$d)</string>
+    <string name="badges_earned">Badges Earned: %1$d/20</string>
+    <string name="settings">Settings</string>
+    <string name="enable_biometric">Enable Biometric Login</string>
+    <string name="receive_notifications">Receive Notifications</string>
+    <string name="select_language">Select Language</string>
+    <string name="logout">Logout</string>
+
+    <!-- Toasts -->
+    <string name="biometric_enabled_msg">Biometric login enabled</string>
+    <string name="biometric_disabled_msg">Biometric login disabled</string>
+    <string name="notifications_enabled_msg">Notifications enabled</string>
+    <string name="notifications_disabled_msg">Notifications disabled</string>
+    <string name="logged_out">Logged out</string>
+    <string name="sync_failed">Failed to sync setting</string>
+
+    <string name="welcome_user">Welcome, %1$s</string>
+    <string name="welcome_user_placeholder">Welcome, Player</string>
+
+    <string name="xp_progress">XP: %1$d/100 to next level</string>
+
+    <string name="select_challenge">Select Your Challenge</string>
+
+    <string name="solo_challenge">Solo Challenge</string>
+    <string name="solo_description">Play against the clock to beat your high score.</string>
+    <string name="start_game">Start Game</string>
+
+    <string name="multiplayer_match">Multiplayer Match</string>
+    <string name="multiplayer_description">Challenge friends or random opponents in real-time.</string>
+    <string name="join_random">Join Random Match</string>
+    <string name="create_room">Create Private Room</string>
+
+    <string name="category_general">General Knowledge</string>
+
+    <string name="starting_solo">Starting Solo Game in %1$s!</string>
+    <string name="joining_match">Joining a random match...</string>
+    <string name="creating_room">Creating a private room...</string>
+    <string name="no_notifications">No new notifications!</string>
+
 </resources>

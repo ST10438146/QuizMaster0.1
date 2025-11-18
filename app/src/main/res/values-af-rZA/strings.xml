@@ -3,22 +3,69 @@
     <!-- Bottom Navigation -->
     <string name="play">Speel</string>
     <string name="quests">Take</string>
-    <string name="leaderboard">Leiertabel</string>
+    <string name="leaderboard">Ranglys</string>
     <string name="profile">Profiel</string>
-    <string name="settings">Instellings</string>
 
-    <!-- Settings -->
-    <string name="select_language">Kies Taal</string>
-    <string name="user_profile">Gebruikersprofiel</string>
-    <string name="stats_and_achievements">Statistieke en Prestasies</string>
-    <string name="enable_biometric_login">Aktiveer Biometriese Aanmelding</string>
-    <string name="receive_notifications">Ontvang Kennisgewings</string>
-    <string name="logout">Teken Uit</string>
+    <!-- Game Screen -->
+    <string name="question_progress">Vraag %1$d/%2$d</string>
+    <string name="loading_question">Laai vraag…</string>
+    <string name="option_default">Opsie</string>
+    <string name="next_question">Volgende Vraag</string>
+    <string name="score_display">Totaal: %1$d</string>
 
     <!-- Game Over -->
-    <string name="your_score">Jou Punte:</string>
-    <string name="category_label">Kategorie:</string>
-    <string name="xp_earned">XP Verdien:</string>
+    <string name="your_score">Jou Totaal: %1$d</string>
+    <string name="xp_earned">+%1$d XP verdien!</string>
+    <string name="category_played">Kategorie: %1$s</string>
     <string name="retry">Probeer Weer</string>
-    <string name="back_home">Terug Huis Toe</string>
+    <string name="back_to_play">Terug na Speel</string>
+
+    <!-- Leaderboard -->
+    <string name="leaderboard_title">Ranglys</string>
+
+    <!-- Quests -->
+    <string name="active_quests">Aktiewe Take</string>
+
+    <!-- Profile -->
+    <string name="user_profile">Gebruikerprofiel</string>
+    <string name="stats_and_achievements">Statistieke en Prestasies</string>
+    <string name="xp_and_level">XP: %1$d (Vlak %2$d)</string>
+    <string name="badges_earned">Kentekens Verdien: %1$d/20</string>
+    <string name="settings">Instellings</string>
+    <string name="enable_biometric">Aktiveer Biometriese Aanmelding</string>
+    <string name="receive_notifications">Ontvang Kennisgewings</string>
+    <string name="select_language">Kies Taal</string>
+    <string name="logout">Teken Uit</string>
+
+    <!-- Toasts -->
+    <string name="biometric_enabled_msg">Biometriese aanmelding geaktiveer</string>
+    <string name="biometric_disabled_msg">Biometriese aanmelding gedeaktiveer</string>
+    <string name="notifications_enabled_msg">Kennisgewings geaktiveer</string>
+    <string name="notifications_disabled_msg">Kennisgewings gedeaktiveer</string>
+    <string name="logged_out">Uitgeteken</string>
+    <string name="sync_failed">Kon nie instelling sinkroniseer nie</string>
+
+    <string name="welcome_user">Welkom, %1$s</string>
+    <string name="welcome_user_placeholder">Welkom, Speler</string>
+
+    <string name="xp_progress">XP: %1$d/100 na volgende vlak</string>
+
+    <string name="select_challenge">Kies jou uitdaging</string>
+
+    <string name="solo_challenge">Solo Uitdaging</string>
+    <string name="solo_description">Speel teen die tyd om jou beste telling te klop.</string>
+    <string name="start_game">Begin Speel</string>
+
+    <string name="multiplayer_match">Multispeler Kompetisie</string>
+    <string name="multiplayer_description">Daag vriende of willekeurige teenstanders uit.</string>
+    <string name="join_random">Sluit by Willekeurige Kompetisie aan</string>
+    <string name="create_room">Skep Privaat Kamer</string>
+
+    <string name="category_general">Algemene Kennis</string>
+
+    <string name="starting_solo">Begin Solo Speletjie in %1$s!</string>
+    <string name="joining_match">Sluit aan by ’n kompetisie...</string>
+    <string name="creating_room">Skep privaat kamer...</string>
+    <string name="no_notifications">Geen nuwe kennisgewings nie!</string>
+
 </resources>
